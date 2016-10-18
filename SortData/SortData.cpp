@@ -1,5 +1,5 @@
 // SortData.cpp : Defines the entry point for the console application.
-//
+//Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
 
 #include "stdafx.h"
 #define DATA_SIZE	((int)3)
