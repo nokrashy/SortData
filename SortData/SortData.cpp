@@ -10,6 +10,7 @@ int main(int argc, char**argv)
 	//float *ptr = (float*) new(1000);
 	//new();
 	//malloc()
+	// first commit test ;
 	printf("argc = %d", argc);
 	for (int i = 0; i < argc; i++)
 	{
