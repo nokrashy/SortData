@@ -8,6 +8,7 @@ float OrgData[DATA_SIZE];
 int main(int argc, char**argv)
 {
 	// comment on date 18/10/2016
+	//some stuff
 	//float *ptr = (float*) new(1000);
 	//new();
 	//malloc()
