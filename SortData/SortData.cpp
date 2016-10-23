@@ -1,28 +1,38 @@
 // SortData.cpp : Defines the entry point for the console application.
 //Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
 //Nokrashy just made a changes it's now 5:58pm 18/10/2016 just for testing how to commit new changes
-// update
+
 #include "stdafx.h"
+#include <string.h>
+#include <iostream>
 #define DATA_SIZE	((int)3)
+using namespace std;
 float OrgData[DATA_SIZE];
-int main(int argc, char**argv)
-{
-	// comment on date 18/10/2016
-	//some stuff
-	//float *ptr = (float*) new(1000);
-	//new();
-	//malloc()
-	// first commit test ;
-	printf("argc = %d", argc);
-	for (int i = 0; i < argc; i++)
+char *FrstArg = NULL;
+char *ScndArg = NULL;
+int main(int argc , char * argv[])
 	{
-		printf("\narg %d ==> %s", i, argv[i]);
+		
+		if (argc != 3) {
+			printf("please enter two files name \n");
+		}
+		
+		else if (strlen(argv[1]) != 9) {
+			printf("Invalid argument '%s'\n", argv[1]);
+		}
+		else if (strlen(argv[2]) != 9) {
+			printf("Invalid argument '%s'\n", argv[2]);
+		}
 
-	}
+		FrstArg = argv[1];
+		ScndArg = argv[2];
+		printf("%s\n",FrstArg);
+		printf("%s",ScndArg);
 
+	
+	
 
-	int cccc = getchar();
-	for (int i=0;i<DATA_SIZE;i++) 
+	/*for (int i=0;i<DATA_SIZE;i++) 
 	{
 		float smlst = OrgData[i];
 		int sIndx = i;
@@ -43,6 +53,7 @@ int main(int argc, char**argv)
 	{
 		printf("\nsorted data %f", OrgData[i]);
 	}
-	int i = getchar();
-	return 0;
+	 int i = getchar();
+	return 0;*/
 }
+
