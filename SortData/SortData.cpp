@@ -2,9 +2,15 @@
 //Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
 //Nokrashy just made a changes it's now 5:58pm 18/10/2016 just for testing how to commit new changes
 // update
+
 #include "stdafx.h"
-#define DATA_SIZE	((int)3)
-float OrgData[DATA_SIZE];
+#include <fstream>
+using namespace std;
+int DATA_SIZE=0;
+	int i=0 ;
+    const int n = 1000;
+	float OrgData[n];
+    #define NULL ("\n")
 int main(int argc, char**argv)
 {
 	// comment on date 18/10/2016
@@ -18,9 +24,27 @@ int main(int argc, char**argv)
 		printf("\narg %d ==> %s", i, argv[i]);
 
 	}
-
-
-	int cccc = getchar();
+	//read from file 
+	ifstream reader("file1.txt"); 
+	if (reader.is_open())
+	{
+		printf("sucess");
+	}
+	else
+	{
+		printf("error");
+	}
+    while (!reader.eof())  
+	{
+	if (reader!=NULL)
+	{
+    reader >> OrgData[i];
+	i++; 
+	}
+	}
+	DATA_SIZE=i;
+	reader.close();
+	//sort data
 	for (int i=0;i<DATA_SIZE;i++) 
 	{
 		float smlst = OrgData[i];
@@ -33,15 +57,19 @@ int main(int argc, char**argv)
 				smlst = OrgData[j];
 			}
 		}
-		printf("\n i=%d in the loop smlst = %f",i, smlst);
 		float temp = OrgData[i];
 		OrgData[i] = smlst;
 		OrgData[sIndx] = temp;
 	}
+	
+	//write into file
+	ofstream writer("file2.txt");
+	writer <<"the sorted data: "<<endl;
 	for (int i = 0;i < DATA_SIZE;i++)
 	{
-		printf("\nsorted data %f", OrgData[i]);
+	writer<<OrgData[i]<<endl;
 	}
-	int i = getchar();
+	writer.close();
+	int c = getchar();
 	return 0;
 }
