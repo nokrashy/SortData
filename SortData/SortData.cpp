@@ -5,55 +5,48 @@
 #include "stdafx.h"
 #include <string.h>
 #include <iostream>
+#include <string.h>
 #define DATA_SIZE	((int)3)
 using namespace std;
 float OrgData[DATA_SIZE];
-char *FrstArg = NULL;
-char *ScndArg = NULL;
+char *InptFl = NULL;
+char *OptFl = NULL;
+char *NFnc = NULL;
+#define NArgmnts  (int(3))
 int main(int argc , char * argv[])
 	{
 		
-		if (argc != 3) {
-			printf("please enter two files name \n");
-		}
-		
-		else if (strlen(argv[1]) != 9) {
-			printf("Invalid argument '%s'\n", argv[1]);
-		}
-		else if (strlen(argv[2]) != 9) {
-			printf("Invalid argument '%s'\n", argv[2]);
-		}
-
-		FrstArg = argv[1];
-		ScndArg = argv[2];
-		printf("%s\n",FrstArg);
-		printf("%s",ScndArg);
-
-	
-	
-
-	/*for (int i=0;i<DATA_SIZE;i++) 
-	{
-		float smlst = OrgData[i];
-		int sIndx = i;
-		for (int j = i + 1;j < DATA_SIZE;j++)
+		if (argc >= (NArgmnts+1)) 
 		{
-			if (OrgData[j] < smlst)
-			{
-				sIndx = j;
-				smlst = OrgData[j];
-			}
+			InptFl = argv[1];
+			OptFl = argv[2];
+			NFnc = argv[3];
+			printf("%s\n",InptFl);
+			printf("%s\n",OptFl);
+			printf("%s",NFnc);
 		}
-		printf("\n i=%d in the loop smlst = %f",i, smlst);
-		float temp = OrgData[i];
-		OrgData[i] = smlst;
-		OrgData[sIndx] = temp;
-	}
-	for (int i = 0;i < DATA_SIZE;i++)
-	{
-		printf("\nsorted data %f", OrgData[i]);
-	}
-	 int i = getchar();
-	return 0;*/
+		else if (argc >= (NArgmnts)) 
+		{
+			InptFl = argv[1];
+			OptFl = argv[2];
+			NFnc = "1";
+			printf("%s\n",InptFl);
+			printf("%s\n",OptFl);
+			printf("%s",NFnc);
+		}
+		else if (argc >= (NArgmnts-1)) 
+		{
+			InptFl = argv[1];
+			OptFl = "File2.txt";
+			NFnc = "1";
+			printf("%s\n",InptFl);
+			printf("%s\n",OptFl);
+			printf("%s",NFnc);
+		}
+		else
+		{
+			printf("<ERROR> note: Enter Two Files Name And Type Of Sorting [1 or 2] \n");
+			return 0;
+		}
 }
 
