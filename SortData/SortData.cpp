@@ -53,51 +53,6 @@ int main(int argc , char * argv[])
 			return 0;
 		}
 		
-		ifstream reader(InptFl); 
-		if (reader.is_open())
-		{
-			printf("sucess");
-		}
-		else
-		{
-			printf("error");
-			return 0 ;
-		}
-		while (!reader.eof())  
-		{
-			reader >> OrgData[i];
-			i++; 
-			
-		}	
-		DATA_SIZE=i;
-		reader.close();
-		//sort data
-		for (int i=0;i<DATA_SIZE;i++) 
-		{
-			float smlst = OrgData[i];
-			int sIndx = i;
-			for (int j = i + 1;j < DATA_SIZE;j++)
-			{
-				if (OrgData[j] < smlst)
-				{
-					sIndx = j;
-					smlst = OrgData[j];
-				}
-			}
-			float temp = OrgData[i];
-			OrgData[i] = smlst;
-			OrgData[sIndx] = temp;
-		}
-	
-		//write into file
-		ofstream writer(OptFl);
-		writer <<"the sorted data: "<<endl;
-		for (int i = 0;i < DATA_SIZE;i++)
-		{
-			writer<<OrgData[i]<<endl;
-		}
-		writer.close();
-		int c = getchar();
-		return 0;
-}
+		
+	}
 
