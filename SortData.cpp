@@ -1,31 +1,23 @@
-// SortData.cpp : Defines the entry point for the console application.
-//Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
-//Nokrashy just made a changes it's now 5:58pm 18/10/2016 just for testing how to commit new changes
-// update
-
+// file insert.cpp : Defines the entry point for the console application.
 #include "stdafx.h"
 #include <fstream>
+#include <string>
 using namespace std;
-int DATA_SIZE=0;
-	int i=0 ;
+#define NArgmnts  (int(3))
+int main(int argc , char * argv[])  
+{
+	char *InptFl;
+	char *OptFl;
+	int DATA_SIZE;
+	int i ;
     const int n = 1000;
 	float OrgData[n];
-    #define NULL ("\n")
-int main(int argc, char**argv)
-{
-	// comment on date 18/10/2016
-	//float *ptr = (float*) new(1000);
-	//new();
-	//malloc()
-	// first commit test ;
-	printf("argc = %d", argc);
-	for (int i = 0; i < argc; i++)
-	{
-		printf("\narg %d ==> %s", i, argv[i]);
-
-	}
+			InptFl = argv[1];
+			OptFl = argv[2];
+		
 	//read from file 
-	ifstream reader("file1.txt"); 
+	
+	ifstream reader(InptFl); 
 	if (reader.is_open())
 	{
 		printf("sucess");
@@ -36,12 +28,12 @@ int main(int argc, char**argv)
 	}
     while (!reader.eof())  
 	{
-	if (reader!=NULL)
-	{
-    reader >> OrgData[i];
-	i++; 
-	}
-	}
+		//if (!reader.end)
+		{
+			reader >> OrgData[i];
+			i++; 
+		}
+	}	
 	DATA_SIZE=i;
 	reader.close();
 	//sort data
@@ -63,7 +55,7 @@ int main(int argc, char**argv)
 	}
 	
 	//write into file
-	ofstream writer("file2.txt");
+	ofstream writer(OptFl);
 	writer <<"the sorted data: "<<endl;
 	for (int i = 0;i < DATA_SIZE;i++)
 	{
