@@ -4,7 +4,6 @@
 
 #include "stdafx.h"
 #include <iostream>
-
 #include <fstream>
 #include <string>
 //#define DATA_SIZE	((int)3)
