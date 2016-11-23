@@ -64,5 +64,4 @@ int main(int argc , char * argv[])
 	writer.close();
 	int c = getchar();
 	return 0;
-	 
 }
