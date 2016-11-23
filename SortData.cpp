@@ -16,7 +16,7 @@ int main(int argc , char * argv[])
 			OptFl = argv[2];
 		
 	//read from file 
-	/n
+	
 	ifstream reader(InptFl); 
 	if (reader.is_open())
 	{
