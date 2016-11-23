@@ -1,12 +1,7 @@
 // file insert.cpp : Defines the entry point for the console application.
-//Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
-//Nokrashy just made a changes it's now 5:58pm 18/10/2016 just for testing how to commit new changes
-
 #include "stdafx.h"
-#include <iostream>
 #include <fstream>
 #include <string>
-//#define DATA_SIZE	((int)3)
 using namespace std;
 #define NArgmnts  (int(3))
 int main(int argc , char * argv[])  
@@ -14,44 +9,13 @@ int main(int argc , char * argv[])
 	char *InptFl;
 	char *OptFl;
 	int DATA_SIZE;
-	char *NFnc;
 	int i ;
     const int n = 1000;
 	float OrgData[n];
-	
-		if (argc >= (NArgmnts+1)) 
-		{
 			InptFl = argv[1];
 			OptFl = argv[2];
-			NFnc = argv[3];
-			printf("%s\n",InptFl);
-			printf("%s\n",OptFl);
-			printf("%s",NFnc);
-		}
-		else if (argc >= (NArgmnts)) 
-		{
-			InptFl = argv[1];
-			OptFl = argv[2];
+	if (argc >= (NArgmnts+1)) 
 		
-            NFnc = "1";
-			printf("%s\n",InptFl);
-			printf("%s\n",OptFl);
-			printf("%s",NFnc);
-		}
-		else if (argc >= (NArgmnts-1)) 
-		{
-			InptFl = argv[1];
-			OptFl = "File2.txt";
-			NFnc = "1";
-			printf("%s\n",InptFl);
-			printf("%s\n",OptFl);
-			printf("%s\n",NFnc);
-		}
-		else
-		{
-			printf("<ERROR> note: Enter Two Files Name And Type Of Sorting [1 or 2] \n");
-			return 0;
-		}
 	//read from file 
 	
 	ifstream reader(InptFl); 
