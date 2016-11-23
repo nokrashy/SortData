@@ -14,7 +14,6 @@ int main(int argc , char * argv[])
 	float OrgData[n];
 			InptFl = argv[1];
 			OptFl = argv[2];
-	if (argc >= (NArgmnts+1)) 
 		
 	//read from file 
 	
