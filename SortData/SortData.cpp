@@ -2,29 +2,59 @@
 //Nokrashy just made a changes it's now 5:56pm 18/10/2016 just for testing how to commit new changes
 //Nokrashy just made a changes it's now 5:58pm 18/10/2016 just for testing how to commit new changes
 
-#include "stdafx.h"
-#define DATA_SIZE	((int)3)
-float OrgData[DATA_SIZE];
-int main()
 
-	{  
-		float swap = 0;//bubble sort
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+float Bubblesort(float*OrgData,float Data_size);
+float indexsort(float*OrgData,float Data_size);
+
+int main()
+{  
+char *NFnc ;
+	if ( *NFnc==2)
+
+	 Bubblesort(float*OrgData,float Data_size);
+
+	else if (*NFnc==1)
 	
-for (int i=0;i<DATA_SIZE;i++)
+		indexsort(float*OrgData,float Data_size);
+
+	else 
+	
+		printf("\nerror");
+	
+	return 0;
+}
+float Bubblesort(float *OrgData,float Data_size)
 {
-	for (int j=0;j<DATA_SIZE-1;j++)
+for (int i=0;i<Data_size;i++)
+{
+	for (int j=0;j<Data_size-1;j++)
 	{
 		if (OrgData[j]>OrgData[j+1]){
-			swap = OrgData[j+1];
+			float swap = OrgData[j];
 			OrgData[j] = OrgData[j+1];
 			OrgData[j+1]=swap; }}
 	
 }
-	}
-	for (int i = 0;i < DATA_SIZE;i++)
+float indexsort(float *OrgData , float Data_size);
+{
+	for (int i=0;i<Data_size;i++) 
 	{
-		printf("\nsorted data %f", OrgData[i]);
-	}
-	int i = getchar();
-	return 0;
-}
+		float smlst = OrgData[i];
+		int sIndx = i;
+		 for (int j = i + 1;j < Data_size;j++)
+		 {
+		     	if (OrgData[j] < smlst)
+		    	{
+				   sIndx = j;
+				  smlst = OrgData[j];
+		    	}
+		}
+	
+		float temp = OrgData[i];
+		OrgData[i] = smlst;
+		OrgData[sIndx] = temp;
+	} }
